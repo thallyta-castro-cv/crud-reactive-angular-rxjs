@@ -1,0 +1,48 @@
+<div class="container-department" fxFlex fxLayout="column">
+  <mat-card class="department-form mat-elevation-z8" fxFlex>
+    <mat-card-title>
+      Cadastre um departamento
+    </mat-card-title>
+
+    <mat-card-content>
+      <div class="mt-4" fxLayout="column" fxLayoutAlign="space-between">
+        <form [formGroup]="form">
+          <mat-form-field appearance="legacy">
+            <mat-label>Departamento</mat-label>
+            <input matInput formControlName="name" placeholder="Insira o nome do departamento">
+            <mat-icon color="primary" matSuffix>add_business</mat-icon>
+          </mat-form-field>
+        </form>
+
+        <div class="form-buttons" fxLayout="row" fxLayoutAlign="end end">
+          <button mat-flat-button [disabled]="this.form.invalid" color="primary" (click)="save()">Salvar</button>
+          <button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="department-list mat-elevation-z8" fxFlex>
+    <mat-card-title>
+      Departamentos cadastrados
+    </mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let department of departments">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <h4 mat-line>{{department.name}}</h4>
+
+          <div class="form-buttons">
+            <button mat-mini-fab color="accent" (click)="delete(department)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-mini-fab color="primary" (click)="edit(department)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
