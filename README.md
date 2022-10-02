@@ -7,6 +7,8 @@ Este projeto foi criado com [Angular CLI](https://github.com/angular/angular-cli
 
 Este projeto consiste CRUD totalmente reativo, onde cada operação que é feita é carregada em tempo real sem precisar recarregar a página.
 
+![CRUD](crud-rxjs.png)
+
 ## Tecnologias utilizadas
 
 ### Frontend
